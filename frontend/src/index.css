@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 bg-orange text-white rounded-lg font-semibold hover:bg-orange/90 transition-all duration-300 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2 bg-gray-200 text-dark rounded-lg font-semibold hover:bg-gray-300 transition-all duration-300;
+  }
+
+  .btn-danger {
+    @apply px-6 py-2 bg-red-500 text-white rounded-lg font-semibold hover:bg-red-600 transition-all duration-300;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1 text-sm rounded-md;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-soft p-6 hover:shadow-lg transition-shadow duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange focus:ring-2 focus:ring-orange/20 transition-all;
+  }
+}

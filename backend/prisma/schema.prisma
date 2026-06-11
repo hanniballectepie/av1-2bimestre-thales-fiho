@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Snack {
+  id          Int     @id @default(autoincrement())
+  nome        String  @db.VarChar(255)
+  categoria   String  @db.VarChar(100)
+  descricao   String  @db.Text
+  ingredientes String @db.Text
+  preco       Float
+  imagem      String? @db.VarChar(500)
+  calorias    Int
+  disponivel  Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([categoria])
+  @@index([disponivel])
+  @@map("snacks")
+}
