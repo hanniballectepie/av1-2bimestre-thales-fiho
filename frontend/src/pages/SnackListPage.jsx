@@ -85,9 +85,12 @@ export default function SnackListPage() {
     }
   };
 
-  const handleDeleteClick = (snack) => {
-    setSnackToDelete(snack);
-    setShowDeleteModal(true);
+  const handleDeleteClick = (snackId) => {
+    const snack = filteredSnacks.find(s => s.id === snackId);
+    if (snack) {
+      setSnackToDelete(snack);
+      setShowDeleteModal(true);
+    }
   };
 
   const handleDeleteConfirm = async () => {
